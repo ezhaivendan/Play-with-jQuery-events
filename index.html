@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+        <script>
+            const data = {
+                "txt" : "hey",
+                "details" : [
+                    {
+                        "date" : "date1",
+                        "name" : "name1"
+                    },
+                    {
+                        "date" : "date2",
+                        "name" : "name2"
+                    },
+                    {
+                        "date" : "date3",
+                        "name" : "name3"
+                    }
+                ]
+            }
+
+            const data1 = {
+                "txt" : "hello",
+                "details" : [
+                    {
+                        "date" : "date1",
+                        "name" : "name1"
+                    }
+                ]
+            }
+
+            $(document).ready(function() {
+                $(".input-txt").focusout(function(){
+                let txtVal = $('.input-txt').val();
+                if(txtVal === data.txt) {
+                    alert(`welcome ${txtVal}`);
+                    if(data.details.length > 1) {
+                        $('.bind-date').addClass('hidden');
+                        $('.bind-multiple-dates').removeClass('hidden');
+                        const appendOption = data.details.map( ele => {
+                            $('.bind-multiple-dates').append($("<option></option>")
+                            .attr("value", ele.date)
+                            .text(ele.date));
+                        })
+                       
+                    }
+                }
+                else{
+                    alert('Please check your input')
+                }
+                })
+            });
+        </script>
+        <style>
+            .hidden{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <input type="text" class="input-txt">
+            <input type="text" class="bind-date">
+            <select class="bind-multiple-dates hidden" ></select>
+            <input type="text" class="bind-name">
+        </div>
+    </body>
+</html>
