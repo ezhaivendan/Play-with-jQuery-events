@@ -20,31 +20,30 @@ $(document).ready(function() {
     $(".input-txt").focusout(function(){
     let txtVal = $('.input-txt').val();
     if(txtVal === data.txt) {
-        alert(`welcome ${txtVal}`);
         if(data.details.length > 1) {
             $('.bind-date').addClass('hidden');
             $('.bind-multiple-dates').removeClass('hidden');
             $('.bind-multiple-dates').append($("<option>Select Dates</option>"))
             const appendOption = data.details.map( ele => {
                 $('.bind-multiple-dates').append($("<option></option>")
-                .attr("value", ele.date)
                 .text(ele.date));
             })
             $('.bind-multiple-dates').on('change', function() {
                 alert(this.value)
                 if(this.value === 'Select Dates'){
-                    alert("Please choose the proper date");
+                    alert("Hey buddy select the date from dropdown");
                     $('.bind-name').val('')
                 }
                 let getDate = data.details.filter(ele => ele.date === this.value);
                 $('.bind-name').val(getDate[0].name)
             });
-        } else if(data.details.length == 1) {
-            alert('hello')
+        } 
+        else if(data.details.length == 1) {
             $('.bind-date').val(data.details[0].date)
             $('.bind-name').val(data.details[0].name)
         }
     }
+
     else{
         alert('Please check your input')
         $('.bind-date').removeClass('hidden');
