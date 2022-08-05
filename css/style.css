@@ -1,3 +1,27 @@
-.hidden{
-    display: none;
+body {
+    margin: 0;
+    padding: 0;
+    background: #dcdcdc;
+    box-sizing: border-box;
+}
+
+.form-container {
+    background: #fff;
+    width: 60%;
+    margin: 0 auto;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -30%;
+    margin-top: -125px;
+    border: 1px solid #afabab;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+
+input, select {
+    width: 31%;
+    margin: 0 0.9%;
+    height: 40px;
 }
