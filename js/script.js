@@ -2,16 +2,28 @@ const data = {
     "txt" : "hey",
     "details" : [
         {
-            "date" : "date1",
-            "name" : "name1"
+            "date" : "10/02/2022",
+            "name" : "Muthu"
         },
         {
-            "date" : "date2",
-            "name" : "name2"
+            "date" : "07/04/2022",
+            "name" : "Arun"
         },
         {
-            "date" : "date3",
-            "name" : "name3"
+            "date" : "23/07/2022",
+            "name" : "Parveen"
+        },
+        {
+            "date" : "14/03/2021",
+            "name" : "Ashok"
+        },
+        {
+            "date" : "17/05/2022",
+            "name" : "Kumar"
+        },
+        {
+            "date" : "08/08/2022",
+            "name" : "Kayal Ananthi"
         }
     ]
 }
@@ -39,6 +51,8 @@ $(document).ready(function() {
             });
         } 
         else if(data.details.length == 1) {
+            $('.bind-date').removeClass('hidden');
+            $('.bind-multiple-dates').addClass('hidden');
             $('.bind-date').val(data.details[0].date)
             $('.bind-name').val(data.details[0].name)
         }
