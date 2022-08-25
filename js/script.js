@@ -1,3 +1,4 @@
+//Sample Data
 const data = {
     "txt" : "hey",
     "details" : [
@@ -28,6 +29,7 @@ const data = {
     ]
 }
 
+//Coding 
 $(document).ready(function() {
     $(".input-txt").focusout(function(){
     let txtVal = $('.input-txt').val();
