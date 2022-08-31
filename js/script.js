@@ -33,6 +33,8 @@ const data = {
 $(document).ready(function() {
     $(".input-txt").focusout(function(){
     let txtVal = $('.input-txt').val();
+        
+    //Checking Input Value
     if(txtVal === data.txt) {
         if(data.details.length > 1) {
             $('.bind-date').addClass('hidden');
@@ -42,6 +44,8 @@ $(document).ready(function() {
                 $('.bind-multiple-dates').append($("<option></option>")
                 .text(ele.date));
             })
+            
+            //Select box on change
             $('.bind-multiple-dates').on('change', function() {
                 alert(this.value)
                 if(this.value === 'Select Dates'){
