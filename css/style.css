@@ -1,6 +1,9 @@
-body {
-    margin: 0;
+html, body {
+margin: 0;
     padding: 0;
+}
+body {
+    
     box-sizing: border-box;
     background: #b7a5ff;
 }
